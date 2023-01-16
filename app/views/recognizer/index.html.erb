@@ -1,2 +1,11 @@
-<h1>Recognizer#index</h1>
-<p>Find me in app/views/recognizer/index.html.erb</p>
+<br>
+<h1>Blank Canvas</h1>
+<p>Use your mouse or touchpad to draw a <strong>Capital Letter</strong> and then press the <br>predict button. Note that the model may take a few seconds to run.</p>
+<p> * A <em>Blur</em> filter is applied before predicting in order to make <br>the drawing more realistic. </p><br>
+
+<%= render 'canvas' %>
+<% if @prediction %>
+  <div class="alert alert-dark fs-5" role="alert">
+    The model predicted: <strong><%= @prediction %></strong></div>
+  </div>  
+<% end %>

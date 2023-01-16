@@ -1,0 +1,35 @@
+<div class="canvas mb-3"></div>
+
+<div class="menu mb-3">
+
+  <form action="../recognizer/submit" method="get" id="canvas-menu-form">
+    <button type="button" id="clear" onclick="clear_grid()" class="btn btn-info">Clear</button>
+    <button type="button" id="submitBtn" onclick="submit_button()" class="btn btn-dark" aria-current="page">Predict</button>
+
+    <input type="hidden" id="pixels" name="pixels" value="">
+  </form>
+
+  
+</div>
+
+
+
+
+<script>
+  let mouseDown = false
+  document.body.onmousedown = () => (mouseDown = true)
+  document.body.onmouseup = () => (mouseDown = false)
+
+  let grid = generate_grid()
+
+  let canvas = document.querySelector('.canvas')
+  canvas.appendChild(generate_grid_element_from_grid(grid))
+
+</script>
+
+<% if @pixels %>
+  <script>
+    fill_grid(<%= @pixels %>)
+  </script>
+<% end %>
+

@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 # load structure, weights & biases of trained model
-model = tf.keras.models.load_model('my_model')
+model = tf.keras.models.load_model('recognizer_ml_model/my_model')
 
 # convert program argument into an numpy array
 x = np.array([json.loads(sys.argv[1])])
