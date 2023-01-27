@@ -15,3 +15,6 @@ The model was trained using data from [this](https://www.kaggle.com/datasets/sac
 <br><br>
 A sequential neural network was used to train the model. The model accuately predicted ~ 98% of the letters on the test set (unseen data). 
 [Here's](recognizer_ml_model/Handwritten%20Character%20Recognition%20Training%20Notebook.ipynb) the jupyter notebook that contains all the details and code to build and train the model.
+
+## Issues
+Since the model was trained on actual, physical hand written letters (that were then reduced to 28x28 pixels), the drawing canvas on the live version doesnt always translate well for the model. A blur effect is applied to make thye image more realistic, but this sometimes isn't enough. So be wary that the model might not give accurate predictions unless you draw a specific way (make sure to use up ~ 70-90% of the canvas space).
